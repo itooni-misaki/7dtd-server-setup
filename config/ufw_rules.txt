@@ -1,0 +1,6 @@
+# 7 Days to Die サーバー用ポート開放ルール
+sudo ufw allow 26900/udp    # ゲーム用ポート
+sudo ufw allow 26901/udp    # Steam接続用
+sudo ufw allow 26902/udp    # 管理用Webパネル（必要な場合）
+sudo ufw allow ssh          # SSH接続（22番）
+sudo ufw enable             # ファイアウォールの有効化

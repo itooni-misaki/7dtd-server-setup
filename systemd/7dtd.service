@@ -5,8 +5,8 @@ After=network.target
 [Service]
 Type=simple
 User=nginx-server  # ← Ubuntu Serverのユーザー名に合わせて変更！
-WorkingDirectory=/home/ubuntu/7dtd/server
-ExecStart=/home/ubuntu/7dtd/server/start-server.sh
+WorkingDirectory=/home/nginx-server/7dtd/server
+ExecStart=/home/nginx-server/7dtd/server/start-server.sh
 Restart=on-failure
 
 [Install]

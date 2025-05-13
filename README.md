@@ -76,7 +76,6 @@ chmod +x scripts/*.sh
 | 項目 | 内容 |
 |------|------|
 | 名前 | 平田 真樹（GitHub: [itooni-misaki](https://github.com/itooni-misaki)） |
-| 専門 | Linux / サーバー構築 / インフラエンジニア志望 |
 | 備考 | このリポジトリは就職活動向けポートフォリオの一環です。 |
 
 ---

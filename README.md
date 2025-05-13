@@ -156,6 +156,8 @@ sudo ufw status verbose
 - 必要なポート（26900〜26902 UDP/TCP）を明示的に開放
 
 - SSH（22/tcp）とHTTPS（443/tcp）も開放済み
+
+
 📸 ステータス出力：
 ![ufw status](images/ufw_status.png)
 

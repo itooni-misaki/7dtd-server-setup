@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ServerSettings>
+  <property name="ServerName" value="My 7DTD Server" />
+  <property name="ServerPort" value="26900" />
+  <property name="ServerVisibility" value="2" />
+  <property name="GameWorld" value="Navezgane" />
+  <property name="GameName" value="MyGame" />
+  <property name="MaxPlayers" value="8" />
+  <property name="Difficulty" value="2" />
+  <property name="DayNightLength" value="60" />
+</ServerSettings>

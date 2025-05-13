@@ -176,6 +176,36 @@ sudo systemctl status 7dtd.service
 
 ---
 
+## 🖼️ 補足：systemctl のステータスと SteamCMD 取得ログについて
+
+### 🔧 `7dtd.service` のステータスについて
+
+`7dtd.service` は systemd 構成ファイルとして `/etc/systemd/system/7dtd.service` に正常登録済であり、起動スクリプト `startserver.sh` とも連携しています。
+
+ただし、SteamCMD による 7DTD 本体バイナリの取得に制限（App ID: 294420）**が存在しているため、実際のサーバープロセスは起動できていません**。  
+そのため `systemctl status` 結果としては以下のように `inactive (dead)` 表示となります。
+
+> ![systemctl_status.png](./images/systemctl_status.png)
+
+🛈 本プロジェクトでは **「構成（systemd連携・スクリプト連動）までをポートフォリオとして明示」**し、バイナリ取得後に稼働確認が可能な状態まで整備しています。
+
+---
+
+### 📦 SteamCMD による取得試行ログ（概要）
+
+以下のコマンドにより、SteamCMD 経由での 7DTD バイナリ取得を試みました：
+
+```bash
+steamcmd +login anonymous +app_update 294420 validate +quit
+```
+
+- SteamCMD 自体は正常に動作し、ログインおよびコマンド受付は完了
+- ただし App ID に対するダウンロード制限があるため、**バイナリ展開は未実施**
+- 今後のバージョンや別環境での再試行により、取得・動作確認が可能です
+
+---
+---
+
 ## 💬 備考（制限事項）
 
 SteamCMD を用いた `7 Days to Die Dedicated Server` のバイナリ（App ID: 294420）の取得は、  

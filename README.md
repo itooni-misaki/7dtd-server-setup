@@ -58,7 +58,6 @@ chmod +x scripts/*.sh
 |---------|------|
 | `scripts/start-server.sh` | サーバーの起動用スクリプト |
 | `config/serverconfig.xml` | ゲームサーバーの設定ファイル |
-| `images/setup-flow.png` | サーバー構築手順の図解（任意追加） |
 
 ---
 

@@ -58,6 +58,7 @@ chmod +x scripts/*.sh
 |---------|------|
 | `scripts/start-server.sh` | サーバーの起動用スクリプト |
 | `config/serverconfig.xml` | ゲームサーバーの設定ファイル |
+| `images/setup-flow.png` | サーバー構築手順の図解（任意追加） |
 
 ---
 
@@ -75,6 +76,7 @@ chmod +x scripts/*.sh
 | 項目 | 内容 |
 |------|------|
 | 名前 | 平田 真樹（GitHub: [itooni-misaki](https://github.com/itooni-misaki)） |
+| 専門 | Linux / サーバー構築 / インフラエンジニア志望 |
 | 備考 | このリポジトリは就職活動向けポートフォリオの一環です。 |
 
 ---

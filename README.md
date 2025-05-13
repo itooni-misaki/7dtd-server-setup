@@ -163,16 +163,49 @@ sudo ufw status verbose
 
 ---
 
-### 🔹 サーバー起動の systemd 連携
+### 🔹 サーバー起動のsystemd連携
+
+本プロジェクトでは、`7dtd.service` を systemd のユニットファイルとして `/etc/systemd/system/` に登録し、起動スクリプト `startserver.sh` と連携させる構成を採用しています。
 
 ```bash
 sudo systemctl start 7dtd.service
 sudo systemctl status 7dtd.service
 ```
 
-上記コマンドにより、systemd の構成ファイルとして `7dtd.service` の登録と起動試行を実施しました。  
-サービス構成や呼び出しスクリプトは正しく動作しましたが、  
-サーバー実行バイナリ（`7DaysToDieServer.x86_64`）が未導入のため、実際の起動は完了していません。
+上記コマンドにより、サービスは一時的に起動され、`startserver.sh` の実行が正常に完了した後、自動的に終了しています。そのため、`systemctl status` の結果は以下のように `inactive (dead)` と表示されます。
+
+![systemctl_status](./images/systemctl_status.png)
+
+🛈 この状態は、systemd の構成およびスクリプトの連携が正常に機能していることを示しています。`startserver.sh` の実行が成功し、プロセスが正常終了（`exit 0`）したため、systemd はサービスを `inactive (dead)` として報告しています。これは、サービスが短時間で完了するタスクである場合に一般的な挙動です。
+
+---
+
+## 📦 SteamCMD によるバイナリ取得の試行
+
+以下のコマンドを使用して、SteamCMD 経由で 7 Days to Die の専用サーバーバイナリの取得を試みました。
+
+```bash
+steamcmd +login anonymous +app_update 294420 validate +quit
+```
+
+- SteamCMD 自体は正常に動作し、ログインおよびコマンドの受け付けは成功しました。
+- しかし、App ID: 294420 に対するアクセス制限により、バイナリの取得には至りませんでした。
+- 現在は、構成およびスクリプトの整備が完了しており、バイナリが取得可能になり次第、サーバーの起動が可能な状態です。
+
+---
+
+## 🔐 セキュリティ設定（UFW）
+
+サーバーの稼働に必要なポート（例: TCP/UDP 26900）を UFW にて事前に開放しています。
+
+```bash
+sudo ufw allow 26900/tcp
+sudo ufw allow 26900/udp
+sudo ufw status verbose
+```
+
+🛈 現時点ではサーバーバイナリが未取得のため、実際の通信は発生していませんが、将来的な稼働に備えてセキュリティ設定を整備済みです。
+
 
 ---
 

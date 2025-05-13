@@ -1,0 +1,13 @@
+[Unit]
+Description=7DTD Game Server
+After=network.target
+
+[Service]
+Type=simple
+User=nginx-server  # ← Ubuntu Serverのユーザー名に合わせて変更！
+WorkingDirectory=/home/ubuntu/7dtd/server
+ExecStart=/home/ubuntu/7dtd/server/start-server.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
